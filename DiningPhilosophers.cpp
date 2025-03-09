@@ -1,5 +1,7 @@
 #include "DiningPhilosophers.h"
 
+mutex cout_mutex; // Mutex for protecting cout
+
 DiningPhilosophers::DiningPhilosophers(int n) : num_philosophers(n), forks(n) {}
 
 void DiningPhilosophers::philosopher(int id) {
@@ -13,7 +15,10 @@ void DiningPhilosophers::philosopher(int id) {
     while (true) {
 
         //Thinking
-        cout << "Philosopher " << id << " is thinking..." << endl;
+        {
+            lock_guard<mutex> lock(cout_mutex);
+            cout << "Philosopher " << id << " is thinking..." << endl;
+        }
         this_thread::sleep_for(chrono::milliseconds(dist(gen)));
 
 
@@ -26,7 +31,10 @@ void DiningPhilosophers::philosopher(int id) {
             forks[left_fork].lock();
         }
 
-        cout << "Philosopher " << id << " is eating..." << std::endl;
+        {
+            lock_guard<mutex> lock(cout_mutex);
+            cout << "Philosopher " << id << " is eating..." << std::endl;
+        }
         this_thread::sleep_for(chrono::milliseconds(dist(gen)));
 
 
