@@ -7,6 +7,8 @@
 #include <chrono>
 #include <random>
 
+using namespace std;
+
 class DiningPhilosophers {
 private:
     int num_philosophers;  // Number of philosophers
