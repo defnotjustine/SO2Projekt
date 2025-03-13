@@ -1,3 +1,4 @@
+#  Problem jedzących filozofów
 **📌 Opis projektu**
 --------------------
 
