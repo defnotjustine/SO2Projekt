@@ -44,13 +44,6 @@ make run
 
 ```
 
-lub, jeśli chcesz podać liczbę filozofów ręcznie:
-
-```
-make run-philosophers
-
-```
-
 * * * * *
 
 **🎯 Opis problemu**
