@@ -28,7 +28,7 @@ g++ -std=c++11 client.cpp -o chat_client -lpthread
 To run the server, execute:
 
 ```
-./chat_server
+./server
 
 ```
 
@@ -39,7 +39,7 @@ The server will start and wait for incoming client connections.
 To run the client, execute:
 
 ```
-./chat_client
+./client
 
 ```
 
